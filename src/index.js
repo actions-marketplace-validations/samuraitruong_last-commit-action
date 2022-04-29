@@ -40,13 +40,11 @@ try {
   const workspaces =
     JSON.parse(fs.readFileSync("package.json", "utf8")).workspaces || [];
 
-  if (packageJson) {
-    workspaces.forEach((workspace) => {
-      const rootFolder = workspace.split("/")[0];
+  workspaces.forEach((workspace) => {
+    const rootFolder = workspace.split("/")[0];
 
-      exportLastCommitSha(rootFolder, "./" + rootFolder);
-    });
-  }
+    exportLastCommitSha(rootFolder, "./" + rootFolder);
+  });
 } catch (error) {
   core.setFailed(error.message);
 }
