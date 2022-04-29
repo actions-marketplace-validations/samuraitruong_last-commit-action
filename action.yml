@@ -1,0 +1,14 @@
+name: "Workspaces package last commit id"
+description: "A simple workspace action that get last commit id for each packages"
+inputs:
+  package-manager:
+    description: "Which package manager using for workspace"
+    required: false
+    default: "yarn"
+  output:
+    description: "set output mode is env or output"
+    required: false
+    default: "env"
+runs:
+  using: "node16"
+  main: "src/index.js"
