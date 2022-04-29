@@ -1,6 +1,8 @@
 const core = require("@actions/core");
 const github = require("@actions/github");
 const { execSync } = require("child_process");
+const fs = require("fs");
+
 try {
   const inputs = ["output", "package-manager"];
   const [output = "env", packageManager = "yarn"] = inputs.map((prop) =>
